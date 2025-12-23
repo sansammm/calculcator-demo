@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Engineering Calculator</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "surface-dark": "#1a2632",
+                        "key-dark": "#233648",
+                        "key-active": "#2f4b66",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display min-h-screen flex flex-col overflow-hidden">
+<!-- Top Status Bar & History Handle -->
+<div class="flex items-center justify-between p-4 pb-2 pt-6">
+<button class="text-gray-500 dark:text-gray-400 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-surface-dark transition-colors">
+<span class="material-symbols-outlined text-[24px]">history</span>
+</button>
+<!-- Mode Switcher -->
+<div class="flex h-8 items-center justify-center rounded-lg bg-gray-200 dark:bg-surface-dark p-1">
+<label class="cursor-pointer flex items-center justify-center rounded-md px-3 h-full has-[:checked]:bg-white dark:has-[:checked]:bg-key-dark has-[:checked]:shadow-sm text-gray-500 dark:text-gray-400 has-[:checked]:text-black dark:has-[:checked]:text-white text-xs font-bold transition-all">
+<span>DEG</span>
+<input checked="" class="hidden" name="mode-toggle" type="radio" value="DEG"/>
+</label>
+<label class="cursor-pointer flex items-center justify-center rounded-md px-3 h-full has-[:checked]:bg-white dark:has-[:checked]:bg-key-dark has-[:checked]:shadow-sm text-gray-500 dark:text-gray-400 has-[:checked]:text-black dark:has-[:checked]:text-white text-xs font-bold transition-all">
+<span>RAD</span>
+<input class="hidden" name="mode-toggle" type="radio" value="RAD"/>
+</label>
+</div>
+<button class="text-gray-500 dark:text-gray-400 flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-gray-200 dark:hover:bg-surface-dark transition-colors">
+<span class="material-symbols-outlined text-[24px]">settings</span>
+</button>
+</div>
+<!-- Display Area -->
+<div class="flex flex-col items-end justify-end px-6 py-2 mb-2 flex-1 min-h-[160px]">
+<!-- Input Expression -->
+<p class="text-gray-500 dark:text-gray-400 text-xl font-normal leading-normal pb-1 text-right tracking-wide break-all">
+            250 × 4 + sin(30)
+        </p>
+<!-- Result -->
+<h1 class="text-gray-900 dark:text-white text-[48px] sm:text-[64px] font-medium leading-none tracking-tight text-right break-all">
+            1,234.56
+        </h1>
+</div>
+<!-- Keypad Container -->
+<div class="bg-gray-200 dark:bg-surface-dark rounded-t-3xl p-4 pb-8 flex-none shadow-[0_-4px_20px_rgba(0,0,0,0.1)] dark:shadow-none">
+<!-- Small drag handle indicator -->
+<div class="w-12 h-1 bg-gray-300 dark:bg-gray-600 rounded-full mx-auto mb-6 opacity-50"></div>
+<!-- Button Grid -->
+<div class="grid grid-cols-4 gap-3 sm:gap-4 max-w-md mx-auto">
+<!-- Row 1: Engineering Functions (Top) -->
+<button class="flex items-center justify-center rounded-xl h-14 sm:h-16 bg-gray-300 dark:bg-key-dark text-gray-700 dark:text-gray-300 text-sm sm:text-base font-medium hover:brightness-110 active:scale-95 transition-all">
+                sin
+            </button>
+<button class="flex items-center justify-center rounded-xl h-14 sm:h-16 bg-gray-300 dark:bg-key-dark text-gray-700 dark:text-gray-300 text-sm sm:text-base font-medium hover:brightness-110 active:scale-95 transition-all">
+                cos
+            </button>
+<button class="flex items-center justify-center rounded-xl h-14 sm:h-16 bg-gray-300 dark:bg-key-dark text-gray-700 dark:text-gray-300 text-sm sm:text-base font-medium hover:brightness-110 active:scale-95 transition-all">
+                tan
+            </button>
+<button class="flex items-center justify-center rounded-xl h-14 sm:h-16 bg-gray-300 dark:bg-key-dark text-gray-700 dark:text-gray-300 text-sm sm:text-base font-medium hover:brightness-110 active:scale-95 transition-all">
+                π
+            </button>
+<!-- Row 2: Secondary Functions -->
+<button class="flex items-center justify-center rounded-xl h-14 sm:h-16 bg-gray-300 dark:bg-key-dark text-gray-700 dark:text-gray-300 text-lg hover:brightness-110 active:scale-95 transition-all">
+                (
+            </button>
+<button class="flex items-center justify-center rounded-xl h-14 sm:h-16 bg-gray-300 dark:bg-key-dark text-gray-700 dark:text-gray-300 text-lg hover:brightness-110 active:scale-95 transition-all">
+                )
+            </button>
+<button class="flex items-center justify-center rounded-xl h-14 sm:h-16 bg-gray-300 dark:bg-key-dark text-gray-700 dark:text-gray-300 text-lg hover:brightness-110 active:scale-95 transition-all">
+                √
+            </button>
+<button class="flex items-center justify-center rounded-xl h-14 sm:h-16 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 text-lg font-bold hover:brightness-110 active:scale-95 transition-all">
+                AC
+            </button>
+<!-- Row 3: Numbers 7-9 & Divide -->
+<button class="flex items-center justify-center rounded-xl h-16 sm:h-20 bg-white dark:bg-[#16202a] text-gray-900 dark:text-white text-2xl font-normal shadow-sm hover:brightness-110 active:scale-95 transition-all">
+                7
+            </button>
+<button class="flex items-center justify-center rounded-xl h-16 sm:h-20 bg-white dark:bg-[#16202a] text-gray-900 dark:text-white text-2xl font-normal shadow-sm hover:brightness-110 active:scale-95 transition-all">
+                8
+            </button>
+<button class="flex items-center justify-center rounded-xl h-16 sm:h-20 bg-white dark:bg-[#16202a] text-gray-900 dark:text-white text-2xl font-normal shadow-sm hover:brightness-110 active:scale-95 transition-all">
+                9
+            </button>
+<button class="flex items-center justify-center rounded-xl h-16 sm:h-20 bg-primary/10 dark:bg-primary/20 text-primary text-2xl font-medium hover:bg-primary/20 dark:hover:bg-primary/30 active:scale-95 transition-all">
+                ÷
+            </button>
+<!-- Row 4: Numbers 4-6 & Multiply -->
+<button class="flex items-center justify-center rounded-xl h-16 sm:h-20 bg-white dark:bg-[#16202a] text-gray-900 dark:text-white text-2xl font-normal shadow-sm hover:brightness-110 active:scale-95 transition-all">
+                4
+            </button>
+<button class="flex items-center justify-center rounded-xl h-16 sm:h-20 bg-white dark:bg-[#16202a] text-gray-900 dark:text-white text-2xl font-normal shadow-sm hover:brightness-110 active:scale-95 transition-all">
+                5
+            </button>
+<button class="flex items-center justify-center rounded-xl h-16 sm:h-20 bg-white dark:bg-[#16202a] text-gray-900 dark:text-white text-2xl font-normal shadow-sm hover:brightness-110 active:scale-95 transition-all">
+                6
+            </button>
+<button class="flex items-center justify-center rounded-xl h-16 sm:h-20 bg-primary/10 dark:bg-primary/20 text-primary text-2xl font-medium hover:bg-primary/20 dark:hover:bg-primary/30 active:scale-95 transition-all">
+                ×
+            </button>
+<!-- Row 5: Numbers 1-3 & Subtract -->
+<button class="flex items-center justify-center rounded-xl h-16 sm:h-20 bg-white dark:bg-[#16202a] text-gray-900 dark:text-white text-2xl font-normal shadow-sm hover:brightness-110 active:scale-95 transition-all">
+                1
+            </button>
+<button class="flex items-center justify-center rounded-xl h-16 sm:h-20 bg-white dark:bg-[#16202a] text-gray-900 dark:text-white text-2xl font-normal shadow-sm hover:brightness-110 active:scale-95 transition-all">
+                2
+            </button>
+<button class="flex items-center justify-center rounded-xl h-16 sm:h-20 bg-white dark:bg-[#16202a] text-gray-900 dark:text-white text-2xl font-normal shadow-sm hover:brightness-110 active:scale-95 transition-all">
+                3
+            </button>
+<button class="flex items-center justify-center rounded-xl h-16 sm:h-20 bg-primary/10 dark:bg-primary/20 text-primary text-2xl font-medium hover:bg-primary/20 dark:hover:bg-primary/30 active:scale-95 transition-all">
+                -
+            </button>
+<!-- Row 6: Zero, Decimal, Delete, Add, Equals -->
+<button class="flex items-center justify-center rounded-xl h-16 sm:h-20 bg-white dark:bg-[#16202a] text-gray-900 dark:text-white text-2xl font-normal shadow-sm hover:brightness-110 active:scale-95 transition-all">
+                .
+            </button>
+<button class="flex items-center justify-center rounded-xl h-16 sm:h-20 bg-white dark:bg-[#16202a] text-gray-900 dark:text-white text-2xl font-normal shadow-sm hover:brightness-110 active:scale-95 transition-all">
+                0
+            </button>
+<button class="flex items-center justify-center rounded-xl h-16 sm:h-20 bg-white dark:bg-[#16202a] text-gray-900 dark:text-white hover:brightness-110 active:scale-95 transition-all shadow-sm">
+<span class="material-symbols-outlined text-2xl">backspace</span>
+</button>
+<button class="flex items-center justify-center rounded-xl h-16 sm:h-20 bg-primary/10 dark:bg-primary/20 text-primary text-2xl font-medium hover:bg-primary/20 dark:hover:bg-primary/30 active:scale-95 transition-all">
+                +
+            </button>
+<!-- Equals Button Spanning Full Width (Optional styling choice for modern calculators, putting it as a distinct FAB or large button at bottom) -->
+<!-- However, based on the grid request, let's keep it integrated or distinct. The prompt asked for a 5x6 grid or similar dense layout, but a 4-col grid is standard for mobile. I will place the EQUALS button prominently below or integrate it. 
+            Let's make the equals button span the bottom or fit the grid. 
+            Re-evaluating the grid: The user asked for "Operator Column" on the right. 
+            Standard iOS calc is 4 columns. 
+            To fit "engineering functions", a 5th column or extra rows are often used. 
+            I've used 4 columns for better touch targets on mobile width. I will add a final large Equals button row or integrate it. Let's add a large primary Equals button. -->
+</div>
+<div class="mt-3 sm:mt-4 max-w-md mx-auto">
+<button class="w-full flex items-center justify-center rounded-xl h-16 sm:h-20 bg-primary text-white text-3xl font-bold shadow-lg shadow-primary/40 hover:brightness-110 active:scale-[0.98] transition-all">
+                =
+            </button>
+</div>
+</div>
+</body></html>
