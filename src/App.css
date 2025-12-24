@@ -1,0 +1,154 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+h1 {
+  font-size: 2.5em;
+  line-height: 1.1;
+  color: #333;
+}
+
+@media (prefers-color-scheme: dark) {
+  h1 {
+    color: #fff;
+  }
+}
+
+/* Calculator Container */
+.calculator-container {
+  background-color: #242424;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+@media (prefers-color-scheme: light) {
+  .calculator-container {
+    background-color: #ffffff;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Display */
+.display-container {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: right;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+@media (prefers-color-scheme: light) {
+  .display-container {
+    background-color: #f0f0f0;
+  }
+}
+
+.display-expression {
+  color: #888;
+  font-size: 1.2rem;
+  min-height: 1.5rem;
+}
+
+.display-value {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+@media (prefers-color-scheme: light) {
+  .display-value {
+    color: #222;
+  }
+}
+
+/* Keypad */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 20px 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: transform 0.1s, filter 0.2s;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+}
+
+.btn:active {
+  transform: scale(0.95);
+  filter: brightness(0.9);
+}
+
+.btn-number {
+  background-color: #3a3a3a;
+  color: #fff;
+}
+
+@media (prefers-color-scheme: light) {
+  .btn-number {
+    background-color: #fff;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.btn-operator {
+  background-color: #ff9f0a;
+  color: #fff;
+}
+
+.btn-action {
+  background-color: #555;
+  color: #fff;
+}
+
+@media (prefers-color-scheme: light) {
+  .btn-action {
+    background-color: #d4d4d2;
+    color: #000;
+  }
+}
+
+.zero-span {
+  grid-column: span 2;
+  border-radius: 40px;
+  aspect-ratio: auto;
+  /* Allow width to stretch */
+}
+
+.btn-equals {
+  background-color: #ff9f0a;
+  color: #fff;
+}

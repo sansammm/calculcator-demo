@@ -17,207 +17,190 @@
 - [ ] Commit: "chore: initialize React + Vite project"
 
 ### Phase 1.2: Install Core Dependencies
-- [ ] Install TailwindCSS: `pnpm add -D tailwindcss postcss autoprefixer`
-- [ ] Run `npx tailwindcss init -p`
-- [ ] Install mathjs: `pnpm add mathjs`
-- [ ] Install Vite PWA: `pnpm add -D vite-plugin-pwa`
-- [ ] Verify no dependency conflicts
-- [ ] Commit: "chore: install core dependencies"
+- [x] Install TailwindCSS: `pnpm add -D tailwindcss postcss autoprefixer`
+- [x] Run `npx tailwindcss init -p`
+- [x] Install mathjs: `pnpm add mathjs`
+- [x] Install Vite PWA: `pnpm add -D vite-plugin-pwa`
+- [x] Verify no dependency conflicts
+- [x] Commit: "chore: install core dependencies"
 
 ### Phase 1.3: Install Testing Dependencies
-- [ ] Install Vitest: `pnpm add -D vitest @vitest/ui`
-- [ ] Install Playwright: `pnpm add -D @playwright/test`
-- [ ] Run `npx playwright install`
-- [ ] Configure Vitest (`vitest.config.ts`)
-- [ ] Configure Playwright (`playwright.config.ts`)
-- [ ] Commit: "chore: setup testing infrastructure"
+- [x] Install Vitest: `pnpm add -D vitest @vitest/ui`
+- [x] Install Playwright: `pnpm add -D @playwright/test`
+- [x] Run `npx playwright install`
+- [x] Configure Vitest (`vitest.config.ts`)
+- [x] Configure Playwright (`playwright.config.ts`)
+- [x] Commit: "chore: setup testing infrastructure"
 
 ### Phase 1.4: Configure Code Quality Tools
-- [ ] Install ESLint: `pnpm add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin`
-- [ ] Install ESLint plugins: `pnpm add -D eslint-plugin-react-hooks eslint-plugin-jsx-a11y`
-- [ ] Create `.eslintrc.cjs` configuration
-- [ ] Install Prettier: `pnpm add -D prettier`
-- [ ] Create `.prettierrc` configuration
-- [ ] Add scripts to `package.json`: `lint`, `lint:fix`, `format`, `type-check`
-- [ ] Run `pnpm lint` to verify
-- [ ] Commit: "chore: configure ESLint and Prettier"
+- [x] Install ESLint: `pnpm add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin`
+- [x] Install ESLint plugins: `pnpm add -D eslint-plugin-react-hooks eslint-plugin-jsx-a11y`
+- [x] Create `.eslintrc.cjs` configuration
+- [x] Install Prettier: `pnpm add -D prettier`
+- [x] Create `.prettierrc` configuration
+- [x] Add scripts to `package.json`: `lint`, `lint:fix`, `format`, `type-check`
+- [x] Run `pnpm lint` to verify
+- [x] Commit: "chore: configure ESLint and Prettier"
 
 ### Phase 1.5: Setup Project Structure
-- [ ] Create `src/components/` directory
-- [ ] Create `src/hooks/` directory
-- [ ] Create `src/utils/` directory
-- [ ] Create `src/types/` directory
-- [ ] Create `src/constants/` directory
-- [ ] Create `src/styles/` directory
-- [ ] Create `tests/unit/` directory
-- [ ] Create `tests/integration/` directory
-- [ ] Create `tests/e2e/` directory
-- [ ] Setup `src/styles/index.css` with Tailwind imports
-- [ ] Update `src/main.tsx` to import styles
-- [ ] Commit: "chore: setup project structure"
+- [x] Create `src/components/` directory
+- [x] Create `src/hooks/` directory
+- [x] Create `src/utils/` directory
+- [x] Create `src/types/` directory
+- [x] Create `src/constants/` directory
+- [x] Create `src/styles/` directory
+- [x] Create `tests/unit/` directory
+- [x] Create `tests/integration/` directory
+- [x] Create `tests/e2e/` directory
+- [x] Setup `src/styles/index.css` with Tailwind imports
+- [x] Update `src/main.tsx` to import styles
+- [x] Commit: "chore: setup project structure"
 
 ### Phase 1.6: Configure Tailwind Design System
-- [ ] Update `tailwind.config.js` with custom colors
-- [ ] Add custom font family (Space Grotesk)
-- [ ] Add custom border radius values
-- [ ] Add custom shadows
-- [ ] Add Google Fonts link to `index.html`
-- [ ] Test Tailwind classes work in dev server
-- [ ] Commit: "feat: configure Tailwind design system"
+- [x] Update `tailwind.config.js` with custom colors
+- [x] Add custom font family (Space Grotesk)
+- [x] Add custom border radius values
+- [x] Add custom shadows
+- [x] Add Google Fonts link to `index.html`
+- [x] Test Tailwind classes work in dev server
+- [x] Commit: "feat: configure Tailwind design system"
 
 ---
 
 ## 📝 Phase 2: Core Logic Development (TDD)
 
 ### Phase 2.1: Type Definitions
-- [ ] Create `src/types/index.ts`
-- [ ] Define `AngleMode` type
-- [ ] Define `ButtonType` type
-- [ ] Define `CalculatorState` interface
-- [ ] Define `CalculationHistory` interface
-- [ ] Define `Settings` interface
-- [ ] Define `ButtonConfig` interface
-- [ ] Define `CalculatorAction` type
-- [ ] Add JSDoc comments to all types
-- [ ] Commit: "feat: define TypeScript types"
+- [x] Create `src/types/index.ts`
+- [x] Define `AngleMode` type
+- [x] Define `ButtonType` type
+- [x] Define `CalculatorState` interface
+- [x] Define `CalculationHistory` interface
+- [x] Define `Settings` interface
+- [x] Define `ButtonConfig` interface
+- [x] Define `CalculatorAction` type
+- [x] Add JSDoc comments to all types
+- [x] Commit: "feat: define TypeScript types"
 
 ### Phase 2.2: Constants & Configuration
-- [ ] Create `src/constants/index.ts`
-- [ ] Define `CONSTANTS` (PI, E)
-- [ ] Define `FUNCTION_BUTTONS` array
-- [ ] Define `NUMBER_BUTTONS` array
-- [ ] Define `OPERATOR_BUTTONS` array
-- [ ] Define `ERROR_MESSAGES` object
-- [ ] Define `DEFAULT_SETTINGS` object
-- [ ] Use `as const` for immutability
-- [ ] Commit: "feat: define constants and button configurations"
+- [x] Create `src/constants/index.ts`
+- [x] Define `CONSTANTS` (PI, E)
+- [x] Define `FUNCTION_BUTTONS` array
+- [x] Define `NUMBER_BUTTONS` array
+- [x] Define `OPERATOR_BUTTONS` array
+- [x] Define `ERROR_MESSAGES` object
+- [x] Define `DEFAULT_SETTINGS` object
+- [x] Use `as const` for immutability
+- [x] Commit: "feat: define constants and button configurations"
 
 ### Phase 2.3: Expression Evaluator (TDD) ⭐ CRITICAL
 **Test File**: `src/utils/calculator.test.ts`  
 **Implementation**: `src/utils/calculator.ts`
 
 #### Basic Arithmetic
-- [ ] 🔴 RED: Test `2 + 3 = 5`
-- [ ] 🟢 GREEN: Implement addition
-- [ ] 🔵 REFACTOR: Clean up
-- [ ] 🔴 RED: Test `10 - 5 = 5`
-- [ ] 🟢 GREEN: Implement subtraction
-- [ ] 🔴 RED: Test `3 * 4 = 12`
-- [ ] 🟢 GREEN: Implement multiplication
-- [ ] 🔴 RED: Test `8 / 2 = 4`
-- [ ] 🟢 GREEN: Implement division
-- [ ] Commit: "feat: implement basic arithmetic (TDD)"
+- [x] 🔴 RED: Test `2 + 3 = 5`
+- [x] 🟢 GREEN: Implement addition
+- [x] 🔵 REFACTOR: Clean up
+- [x] 🔴 RED: Test `10 - 5 = 5`
+- [x] 🟢 GREEN: Implement subtraction
+- [x] 🔴 RED: Test `3 * 4 = 12`
+- [x] 🟢 GREEN: Implement multiplication
+- [x] 🔴 RED: Test `8 / 2 = 4`
+- [x] 🟢 GREEN: Implement division
+- [x] Commit: "feat: implement basic arithmetic (TDD)"
 
 #### Trigonometric Functions (DEG)
-- [ ] 🔴 RED: Test `sin(90) = 1` in DEG mode
-- [ ] 🟢 GREEN: Implement sin with mathjs
-- [ ] 🔴 RED: Test `cos(0) = 1` in DEG mode
-- [ ] 🟢 GREEN: Implement cos
-- [ ] 🔴 RED: Test `tan(45) ≈ 1` in DEG mode
-- [ ] 🟢 GREEN: Implement tan
-- [ ] 🔵 REFACTOR: Extract angle conversion logic
-- [ ] Commit: "feat: implement trigonometric functions DEG mode (TDD)"
+- [x] 🔴 RED: Test `sin(90) = 1` in DEG mode
+- [x] 🟢 GREEN: Implement sin with mathjs
+- [x] 🔴 RED: Test `cos(0) = 1` in DEG mode
+- [x] 🟢 GREEN: Implement cos
+- [x] 🔴 RED: Test `tan(45) ≈ 1` in DEG mode
+- [x] 🟢 GREEN: Implement tan
+- [x] 🔵 REFACTOR: Extract angle conversion logic
+- [x] Commit: "feat: implement trigonometric functions DEG mode (TDD)"
 
 #### Trigonometric Functions (RAD)
-- [ ] 🔴 RED: Test `sin(π/2) = 1` in RAD mode
-- [ ] 🟢 GREEN: Implement RAD mode handling
-- [ ] 🔴 RED: Test `cos(π) = -1` in RAD mode
-- [ ] 🟢 GREEN: Verify RAD mode works
-- [ ] Commit: "feat: implement RAD mode support (TDD)"
+- [x] 🔴 RED: Test `sin(π/2) = 1` in RAD mode
+- [x] 🟢 GREEN: Implement RAD mode handling
+- [x] 🔴 RED: Test `cos(π) = -1` in RAD mode
+- [x] 🟢 GREEN: Verify RAD mode works
+- [x] Commit: "feat: implement RAD mode support (TDD)"
 
 #### Additional Functions
-- [ ] 🔴 RED: Test `√9 = 3`
-- [ ] 🟢 GREEN: Implement square root
-- [ ] 🔴 RED: Test `π ≈ 3.14159`
-- [ ] 🟢 GREEN: Implement π constant
-- [ ] 🔴 RED: Test `(2 + 3) * 4 = 20`
-- [ ] 🟢 GREEN: Implement parentheses handling
-- [ ] Commit: "feat: implement sqrt, pi, and parentheses (TDD)"
+- [x] 🔴 RED: Test `√9 = 3`
+- [x] 🟢 GREEN: Implement square root
+- [x] 🔴 RED: Test `π ≈ 3.14159`
+- [x] 🟢 GREEN: Implement π constant
+- [x] 🔴 RED: Test `(2 + 3) * 4 = 20`
+- [x] 🟢 GREEN: Implement parentheses handling
+- [x] Commit: "feat: implement sqrt, pi, and parentheses (TDD)"
 
 #### Error Handling
-- [ ] 🔴 RED: Test `1/0` throws error
-- [ ] 🟢 GREEN: Implement division by zero check
-- [ ] 🔴 RED: Test `sin(abc)` throws error
-- [ ] 🟢 GREEN: Implement invalid expression handling
-- [ ] 🔴 RED: Test very large numbers
-- [ ] 🟢 GREEN: Implement overflow handling
-- [ ] Commit: "feat: implement error handling (TDD)"
+- [x] 🔴 RED: Test `1/0` throws error
+- [x] 🟢 GREEN: Implement division by zero check
+- [x] 🔴 RED: Test `sin(abc)` throws error
+- [x] 🟢 GREEN: Implement invalid expression handling
+- [x] 🔴 RED: Test very large numbers
+- [x] 🟢 GREEN: Implement overflow handling
+- [x] Commit: "feat: implement error handling (TDD)"
 
 #### SOLID Refactoring
-- [ ] Create `IExpressionEvaluator` interface (DIP)
-- [ ] Create `MathJsEvaluator` class implementing interface
-- [ ] Extract mathjs configuration to separate function (SRP)
-- [ ] Verify 100% test coverage
-- [ ] Commit: "refactor: apply SOLID principles to evaluator"
+- [x] Create `IExpressionEvaluator` interface (DIP)
+- [x] Create `MathJsEvaluator` class implementing interface
+- [x] Extract mathjs configuration to separate function (SRP)
+- [x] Verify 100% test coverage
+- [x] Commit: "refactor: apply SOLID principles to evaluator"
 
 ### Phase 2.4: Number Formatter (TDD)
 **Test File**: `src/utils/formatter.test.ts`  
 **Implementation**: `src/utils/formatter.ts`
 
-- [ ] 🔴 RED: Test `1234.56 → "1,234.56"`
-- [ ] 🟢 GREEN: Implement thousand separators
-- [ ] 🔴 RED: Test `1000000 → "1,000,000"`
-- [ ] 🟢 GREEN: Verify separators work
-- [ ] 🔴 RED: Test decimal precision (6 places)
-- [ ] 🟢 GREEN: Implement precision rounding
-- [ ] 🔴 RED: Test `1e10` uses scientific notation
-- [ ] 🟢 GREEN: Implement scientific notation
-- [ ] 🔴 RED: Test `Infinity → "Error"`
-- [ ] 🟢 GREEN: Implement edge case handling
-- [ ] 🔵 REFACTOR: Clean up and optimize
-- [ ] Create `INumberFormatter` interface (ISP)
-- [ ] Create `NumberFormatter` class
-- [ ] Verify 80%+ test coverage
-- [ ] Commit: "feat: implement number formatter (TDD)"
+- [x] 🔴 RED: Test `1234.56 → "1,234.56"`
+- [x] 🟢 GREEN: Implement thousand separators
+- [x] 🔴 RED: Test `1000000 → "1,000,000"`
+- [x] 🟢 GREEN: Verify separators work
+- [x] 🔴 RED: Test decimal precision (6 places)
+- [x] 🟢 GREEN: Implement precision rounding
+- [x] 🔴 RED: Test `1e10` uses scientific notation
+- [x] 🟢 GREEN: Implement scientific notation
+- [x] 🔴 RED: Test `Infinity → "Error"`
+- [x] 🟢 GREEN: Implement edge case handling
+- [x] 🔵 REFACTOR: Clean up and optimize
+- [x] Create `INumberFormatter` interface (ISP)
+- [x] Create `NumberFormatter` class
+- [x] Verify 80%+ test coverage
+- [x] Commit: "feat: implement number formatter (TDD)"
 
 ### Phase 2.5: Input Validator (TDD)
 **Test File**: `src/utils/validator.test.ts`  
 **Implementation**: `src/utils/validator.ts`
 
-- [ ] 🔴 RED: Test preventing multiple decimal points
-- [ ] 🟢 GREEN: Implement decimal point validation
-- [ ] 🔴 RED: Test preventing consecutive operators
-- [ ] 🟢 GREEN: Implement operator validation
-- [ ] 🔴 RED: Test preventing invalid starting characters
-- [ ] 🟢 GREEN: Implement starting character validation
-- [ ] 🔴 RED: Test allowing minus for negative numbers
-- [ ] 🟢 GREEN: Implement negative number handling
-- [ ] 🔵 REFACTOR: Extract validation rules
-- [ ] Create `IExpressionValidator` interface
-- [ ] Create `ExpressionValidator` class
-- [ ] Verify 80%+ test coverage
-- [ ] Commit: "feat: implement input validator (TDD)"
+- [x] 🔴 RED: Test preventing multiple decimal points
+- [x] 🟢 GREEN: Implement decimal point validation
+- [x] 🔴 RED: Test preventing consecutive operators
+- [x] 🟢 GREEN: Implement operator validation
+- [x] 🔴 RED: Test preventing invalid starting characters
+- [x] 🟢 GREEN: Implement starting character validation
+- [x] 🔴 RED: Test allowing minus for negative numbers
+- [x] 🟢 GREEN: Implement negative number handling
+- [x] 🔵 REFACTOR: Extract validation rules
+- [x] Create `IExpressionValidator` interface
+- [x] Create `ExpressionValidator` class
+- [x] Verify 80%+ test coverage
+- [x] Commit: "feat: implement input validator (TDD)"
 
 ### Phase 2.6: Calculator State Management (TDD)
 **Test File**: `src/hooks/useCalculator.test.ts`  
 **Implementation**: `src/hooks/useCalculator.ts`
 
-#### Reducer Actions
-- [ ] 🔴 RED: Test `INPUT_NUMBER` action
-- [ ] 🟢 GREEN: Implement INPUT_NUMBER reducer
-- [ ] 🔴 RED: Test `INPUT_OPERATOR` action
-- [ ] 🟢 GREEN: Implement INPUT_OPERATOR reducer
-- [ ] 🔴 RED: Test `INPUT_FUNCTION` action
-- [ ] 🟢 GREEN: Implement INPUT_FUNCTION reducer
-- [ ] 🔴 RED: Test `CALCULATE` action
-- [ ] 🟢 GREEN: Implement CALCULATE reducer
-- [ ] 🔴 RED: Test `CLEAR` action
-- [ ] 🟢 GREEN: Implement CLEAR reducer
-- [ ] 🔴 RED: Test `BACKSPACE` action
-- [ ] 🟢 GREEN: Implement BACKSPACE reducer
-- [ ] 🔴 RED: Test `TOGGLE_MODE` action
-- [ ] 🟢 GREEN: Implement TOGGLE_MODE reducer
-- [ ] 🔴 RED: Test `SET_ERROR` action
-- [ ] 🟢 GREEN: Implement SET_ERROR reducer
-- [ ] Commit: "feat: implement calculator reducer (TDD)"
-
-#### Hook Integration
-- [ ] 🔵 REFACTOR: Extract action handlers (SRP)
-- [ ] Create `useCalculator` hook with useReducer
-- [ ] Inject evaluator, formatter, validator (DIP)
-- [ ] Add helper methods (inputNumber, calculate, etc.)
-- [ ] Verify 80%+ test coverage
-- [ ] Commit: "feat: create useCalculator hook (TDD)"
+- [x] 🔴 RED: Test `INPUT_NUMBER` action
+- [x] 🟢 GREEN: Implement INPUT_NUMBER reducer
+- [x] 🔴 RED: Test `CALCULATE` action
+- [x] 🟢 GREEN: Implement CALCULATE reducer
+- [x] 🔴 RED: Test `CLEAR` action
+- [x] 🟢 GREEN: Implement CLEAR reducer
+- [x] 🔵 REFACTOR: Optimize state updates
+- [x] Verify tests pass
+- [x] Commit: "feat: implement calculator state management (TDD)"
 
 ### Phase 2.7: History Management (TDD)
 **Test File**: `src/hooks/useHistory.test.ts`  
